@@ -8,9 +8,12 @@
 
         
     </head>
-    <body class="login-body">
-        SIGNUP BODY
-        NAVIGATE: HOME
+    <body class="sign-up-body">
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+        <h1>Sign Up</h1>
         EXECUTE: SIGNUP Fx
     </body>
 </html>

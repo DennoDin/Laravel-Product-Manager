@@ -9,7 +9,9 @@
         
     </head>
     <body class="login-body">
-        HOME BODY
-        NAVIGATE: LOGIN, SIGNUP, PRODUCT
+        <h1>Welcome!</h1>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <a href="/product">Manage Products</a>
     </body>
 </html>

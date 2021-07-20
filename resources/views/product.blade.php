@@ -9,8 +9,11 @@
         
     </head>
     <body class="login-body">
+        <div class="navbar">
+            <a href="/">Home</a>
+        </div>
+        <h1>Product Management</h1>
         PRODUCT BODY
-        NAVIGATE: HOME
         EXECUTE: ACCESS PRODUCT CRUD
     </body>
 </html>

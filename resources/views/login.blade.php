@@ -6,11 +6,14 @@
 
         <title>LOGIN</title>
 
-        
     </head>
     <body class="login-body">
-        LOGIN BODY
-        NAVIGATE: HOME
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/signup">Sign Up</a>
+        </div>
+        <h1>Login</h1>
+        This is the <b>LOGIN</b> body
         EXECUTE: LOGIN Fx
     </body>
 </html>
