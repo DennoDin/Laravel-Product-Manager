@@ -38,7 +38,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'sku' => 'required|string|max:255',
+            'description' => 'string|max:255',
+        ]);
+
+        
+        return $request->input();
     }
 
     /**

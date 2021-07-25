@@ -29,6 +29,6 @@ Route::get('/products', function () {
     return view('products');
 })->middleware(['auth'])->name('products');
 
-Route::post('/products');
+Route::post('/products', [ProductController::class, 'store']);
 
 require __DIR__.'/auth.php';
