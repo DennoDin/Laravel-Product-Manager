@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// Route::resource('products', ProductController::class)->only(['index', 'create', 'store', 'update', 'destroy']);
+
+
 Route::get('/products', function () {
     return view('products');
 })->middleware(['auth'])->name('products');
+
+Route::post('/products');
 
 require __DIR__.'/auth.php';

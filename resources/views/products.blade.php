@@ -10,20 +10,20 @@
 
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                <form method="POST" action="{{ route('addProduct') }}">
-                    @csrf
+                <!-- <form method="POST" action="{{ route('products') }}"> -->
+                    <!-- @csrf -->
 
                     <!-- Name -->
-                    <div>
+                    <!-- <div>
                         <x-label for="name" :value="name" />
                         <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-                    </div>
+                    </div> -->
                     <!-- SKU -->
                     
                     <!-- Description -->
                     
                     <!-- Image Upload -->
-                </form>
+                <!-- </form> -->
             </div>
         </div>
     </div>  
