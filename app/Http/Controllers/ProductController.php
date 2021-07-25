@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return 'hello world 2';
+        return 'product create form page here';
     }
 
     /**
@@ -44,7 +44,14 @@ class ProductController extends Controller
             'description' => 'string|max:255',
         ]);
 
-        
+        $product = Product::create([
+            'name' => $request->name,
+            'sku' => $request->sku,
+            'product_detail' => $request->description,
+            'image' => $request->image,
+        ]);
+
+        // return view('product');
         return $request->input();
     }
 
