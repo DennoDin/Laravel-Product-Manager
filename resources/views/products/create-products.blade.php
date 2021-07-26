@@ -14,22 +14,22 @@
                     @csrf
 
                     <!-- Name -->
-                    <div>
+                    <div class="p-3">
                         <x-label for="name" value="Name" />
                         <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="" required autofocus />
                     </div>
                     <!-- SKU -->
-                    <div>
+                    <div class="p-3">
                         <x-label for="sku" value="SKU" />
                         <x-input id="sku" class="block mt-1 w-full" type="text" name="sku" value="" required autofocus />
                     </div>
                     <!-- Description -->
-                    <div>
+                    <div class="p-3">
                         <x-label for="description" value="Description" />
                         <x-input id="description" class="block mt-1 w-full" type="text" name="description" value="" required autofocus />
                     </div>
                     <!-- Image Upload -->
-                    <div>
+                    <div class="p-3">
                         <x-label for="image" value="Image" />
                         <x-input id="image" class="block mt-1" type="file" name="image" value="" required autofocus />
                     </div>
