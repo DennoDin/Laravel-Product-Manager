@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Products') }}
+        <a href="/products">Products</a> > Create A Product
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -15,21 +15,24 @@
 
                     <!-- Name -->
                     <div>
-                        <x-label for="name" value="name" />
-                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="name" required autofocus />
+                        <x-label for="name" value="Name" />
+                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="" required autofocus />
                     </div>
                     <!-- SKU -->
                     <div>
-                        <x-label for="sku" value="sku" />
-                        <x-input id="sku" class="block mt-1 w-full" type="text" name="sku" value="sku" required autofocus />
+                        <x-label for="sku" value="SKU" />
+                        <x-input id="sku" class="block mt-1 w-full" type="text" name="sku" value="" required autofocus />
                     </div>
                     <!-- Description -->
                     <div>
-                        <x-label for="description" value="description" />
-                        <x-input id="description" class="block mt-1 w-full" type="text" name="description" value="description" required autofocus />
+                        <x-label for="description" value="Description" />
+                        <x-input id="description" class="block mt-1 w-full" type="text" name="description" value="" required autofocus />
                     </div>
                     <!-- Image Upload -->
-
+                    <div>
+                        <x-label for="image" value="Image" />
+                        <x-input id="image" class="block mt-1" type="file" name="image" value="" required autofocus />
+                    </div>
                     <!-- Submit -->
                     <div class="flex justify-end mt-4">
                         <x-button class="ml-3">Create</x-button>
