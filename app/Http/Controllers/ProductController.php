@@ -40,18 +40,19 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'sku' => 'required|string|max:255',
+            'sku' => 'required|string|max:255|unique:products',
             'description' => 'string|max:255',
         ]);
+
+        $image = base64_encode($request->file('image'));
 
         $product = Product::create([
             'name' => $request->name,
             'sku' => $request->sku,
-            'product_detail' => $request->description,
-            'image' => $request->image,
+            'description' => $request->description,
+            'image' => $image,
         ]);
 
-        // return view('product');
         return $request->input();
     }
 
