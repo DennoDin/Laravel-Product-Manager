@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Requests\ProductsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ProductController extends Controller
 {
@@ -44,7 +45,8 @@ class ProductController extends Controller
             'description' => 'string|max:255',
         ]);
 
-        $image = base64_encode($request->file('image'));
+        //TODO: FIX ENCODING SAVING
+        $image = (String) Image::make(file_get_contents($request->file('image')))->fit(100)->encode('data-url');
 
         $product = Product::create([
             'name' => $request->name,
@@ -53,7 +55,7 @@ class ProductController extends Controller
             'image' => $image,
         ]);
 
-        return $request->input();
+        return $product;
     }
 
     /**
