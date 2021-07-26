@@ -22,12 +22,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-// Route::resource('products', ProductController::class)->only(['index', 'create', 'store', 'update', 'destroy']);
-
-
 Route::get('/products', function () {
-    return view('products');
+    return view('products.list-products');
 })->middleware(['auth'])->name('products');
+
+Route::get('/products/create', function() {
+    return view('products.create-products');
+});
 
 Route::post('/products', [ProductController::class, 'store']);
 
