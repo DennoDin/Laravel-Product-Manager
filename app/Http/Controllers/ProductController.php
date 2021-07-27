@@ -98,8 +98,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
+        $item = Product::findOrFail($request->id);
+        
+        $validateArray = [];
+        if($item->name !== $request->name) {
+            $validateArray['name'] = 'required|string|max:255';
+        }
+        if($item->SKU !== $request->sku) {
+            $validateArray['sku'] = 'required|string|max:255|unique:products';
+        } 
+        if($item->description !== $request->description) {
+            $validateArray['description'] = 'required|string|max:255';
+        }
+        
+        $request->validate($validateArray);
+
+
+        $image = (String) Image::make(file_get_contents($request->file('image')))->fit(100)->encode('data-url');
+
+        $item->name = $request->name;
+        $item->sku = $request->sku;
+        $item->description = $request->description;
+        $item->image = $image;
+
+        $item->save();
+
         return $this->index();
     }
 
