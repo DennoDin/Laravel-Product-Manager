@@ -59,7 +59,7 @@ class ProductController extends Controller
             'image' => $image,
         ]);
 
-        return view('products.list-products');
+        return $this->index();
     }
 
     /**
