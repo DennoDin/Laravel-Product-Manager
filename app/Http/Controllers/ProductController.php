@@ -84,6 +84,7 @@ class ProductController extends Controller
         $item = DB::table('products')->where('SKU', $sku)->first();
 
         return view('products.edit-product', [
+            'id' => $item->id,
             'name' => $item->name,
             'sku' => $item->SKU,
             'description' => $item->description,

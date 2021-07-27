@@ -32,6 +32,9 @@
                     <x-slot name="description">
                         {{ $item->description }}
                     </x-slot>
+                    <x-slot name="id">
+                        {{ $item->id }}
+                    </x-slot>
                 </x-list-entry>
                 @endforeach
             </div>
