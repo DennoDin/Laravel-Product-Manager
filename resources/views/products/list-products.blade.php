@@ -11,8 +11,29 @@
             </div>
             <br/>
             <div class="p-6 bg-white border-b border-gray-200">
-                Products:
-
+                <div class="grid grid-cols-10">
+                    <h2 class="col-start-1 col-end-2">Products:</h2>
+                    <h2 class="col-start-2 col-end-3 ">Name</h2>
+                    <h2 class="col-start-3 col-end-4 ">SKU#</h2>
+                    <h2 class="col-start-4 col-end-7 ">Description</h2>
+                    <h2 class="col-start-8 col-end-10 ">Actions</h2>
+                </div>
+                @foreach ($productsList as $item)
+                <x-list-entry>
+                    <x-slot name="image">
+                        {{ $item->image }}
+                    </x-slot>
+                    <x-slot name="name">
+                        {{ $item->name }}
+                    </x-slot>
+                    <x-slot name="sku">
+                        {{ $item->SKU }}
+                    </x-slot>
+                    <x-slot name="description">
+                        {{ $item->description }}
+                    </x-slot>
+                </x-list-entry>
+                @endforeach
             </div>
         </div>
     </div>  
