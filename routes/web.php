@@ -30,7 +30,9 @@ Route::get('/products/create', function() {
 
 Route::post('/products', [ProductController::class, 'store']);
 
-Route::put('/products/{sku}', [ProductController::class, 'update']);
+Route::get('/products/{sku}/edit', [ProductController::class, 'edit']);
+
+Route::put('/products', [ProductController::class, 'update']);
 
 Route::delete('/products/{sku}', [ProductController::class, 'destroy']);
 

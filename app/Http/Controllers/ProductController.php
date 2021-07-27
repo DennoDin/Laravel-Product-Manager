@@ -79,9 +79,15 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(String $sku)
     {
-        //
+        $item = DB::table('products')->where('SKU', $sku)->first();
+
+        return view('products.edit-product', [
+            'name' => $item->name,
+            'sku' => $item->SKU,
+            'description' => $item->description,
+        ]);
     }
 
     /**
@@ -93,7 +99,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        return $this->index();
     }
 
     /**
