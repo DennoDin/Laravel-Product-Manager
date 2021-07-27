@@ -24,9 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/products', [ProductController::class, 'index'])->middleware(['auth'])->name('products');
 
-Route::get('/products/create', function() {
-    return view('products.create-products');
-});
+Route::get('/products/create', [ProductController::class, 'create']);
 
 Route::post('/products', [ProductController::class, 'store']);
 
