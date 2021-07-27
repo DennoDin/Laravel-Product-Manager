@@ -30,4 +30,8 @@ Route::get('/products/create', function() {
 
 Route::post('/products', [ProductController::class, 'store']);
 
+Route::put('/products/{sku}', [ProductController::class, 'update']);
+
+Route::delete('/products/{sku}', [ProductController::class, 'destroy']);
+
 require __DIR__.'/auth.php';
