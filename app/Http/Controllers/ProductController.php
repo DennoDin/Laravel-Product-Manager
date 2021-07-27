@@ -55,7 +55,7 @@ class ProductController extends Controller
             'image' => $image,
         ]);
 
-        return $product;
+        return view('products.list-products');
     }
 
     /**
