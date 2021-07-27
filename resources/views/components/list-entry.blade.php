@@ -12,6 +12,11 @@
         </span>
     </span>
     <span class="p-3 col-start-9 col-end-10">
-        <p>Delete {{ $sku ?? '' }}</p>
+        <form method="POST" action="{{ 'products/' }}">
+            @csrf
+            {{method_field("DELETE")}}
+            <x-input id="id" type="hidden" name="id" :value="$id" />
+            <button>Delete</button>
+        </form>
     </span>
 </div>

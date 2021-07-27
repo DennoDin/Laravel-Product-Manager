@@ -32,6 +32,6 @@ Route::get('/products/{sku}/edit', [ProductController::class, 'edit']);
 
 Route::put('/products', [ProductController::class, 'update']);
 
-Route::delete('/products/{sku}', [ProductController::class, 'destroy']);
+Route::delete('/products', [ProductController::class, 'destroy']);
 
 require __DIR__.'/auth.php';
