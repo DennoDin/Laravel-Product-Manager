@@ -1,7 +1,7 @@
 <div>
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-    <form method="POST" action="{{ route('products') }}" enctype="multipart/form-data">
+    <form method="{{ $formType }}" action="{{ route('products') }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Name -->
