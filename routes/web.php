@@ -22,9 +22,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/products', function () {
-    return view('products.list-products');
-})->middleware(['auth'])->name('products');
+Route::get('/products', [ProductController::class, 'index'])->middleware(['auth'])->name('products');
 
 Route::get('/products/create', function() {
     return view('products.create-products');

@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Http\Requests\ProductsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
+
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ProductController extends Controller
@@ -17,8 +19,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return "products index";
-        // return View::make('products');
+        $products = DB::table('products')->get();
+
+        return view('products.list-products')->with('productsList', $products);
+        
     }
 
     /**
