@@ -1,8 +1,11 @@
 <div>
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-    <form method="{{ $formType }}" action="{{ route('products') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('products') }}" enctype="multipart/form-data">
         @csrf
+        {{method_field($formType)}}
+        <!-- Hidden Id -->
+        <x-input id="id" type="hidden" name="id" :value="$id" />
 
         <!-- Name -->
         <div class="p-3">
