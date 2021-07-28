@@ -59,7 +59,7 @@ class ProductController extends Controller
             'image' => $image,
         ]);
 
-        return $this->index();
+        return redirect('/products');;
     }
 
     /**
@@ -125,7 +125,7 @@ class ProductController extends Controller
 
         $item->save();
 
-        return $this->index();
+        return redirect('/products');
     }
 
     /**
