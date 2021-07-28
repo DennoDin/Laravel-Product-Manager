@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\ProductCreated;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +36,15 @@ Route::get('/products/{sku}/edit', [ProductController::class, 'edit']);
 Route::put('/products', [ProductController::class, 'update']);
 
 Route::delete('/products', [ProductController::class, 'destroy']);
+
+Route::get('/mail', function() {
+    $product = [
+        "name" => "dustin",
+        "SKU" => "100",
+        "description" => "hello world",
+    ];
+    Mail::to('dustin.andy.tran@gmail.com')->send(new ProductCreated($product));
+    return '<h1>Email Sent</h1>';
+});
 
 require __DIR__.'/auth.php';
