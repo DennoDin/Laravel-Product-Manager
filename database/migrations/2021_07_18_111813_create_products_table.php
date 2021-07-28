@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('SKU');
             $table->string('name');
             $table->string('description')->charset('ascii');
-            $table->binary('image'); // Blob
+            $table->longText('image');
         });
     }
 
