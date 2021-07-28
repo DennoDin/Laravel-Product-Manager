@@ -49,3 +49,4 @@ After creating your `.env` file, run `php artisan key:generate` to populate the 
 - Dedicated product pages
 - Confirmation before delete
 - Better image compression
+- Users can opt-in or out of specific emails
