@@ -37,4 +37,9 @@ Please use the [template.env](./template.env) for your `.env` file. You will hav
 
 - If you are using mysql 8 and PHP 7+, when making a mysql user, make sure to use `IDENTIFIED WITH mysql_native_password BY 'password';` when setting the password.
 - Something wrong with your tables? Try running `php artisan migrate:fresh`
-- Something wrong with in general? Try running `php artisan cache:clear`
+- Something wrong with in general? Try running `php artisan cache:clear` and `php artisan key:generate`
+
+## Future Features
+- Dedicated product pages
+- Confirmation before delete
+- Better image compression
