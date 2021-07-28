@@ -51,7 +51,6 @@ class ProductController extends Controller
             'description' => 'string|max:255',
         ]);
 
-        //TODO: FIX ENCODING SAVING
         $image = (String) Image::make(file_get_contents($request->file('image')))->fit(100)->encode('data-url');
 
         $product = Product::create([
