@@ -61,7 +61,18 @@ class ProductController extends Controller
             'image' => $image,
         ]);
 
-        Mail::to('dustin.andy.tran@gmail.com')->send(new ProductCreated($product));
+        $mailArray = [];
+        $userTable = DB::table('users')->select('first-name', 'last-name', 'email')->get();
+        foreach ($userTable as $user) {
+            $moddedUser = [
+                'name' => $user->{'first-name'}." ".$user->{'last-name'},
+                'email' => $user->email,
+            ];
+
+            array_push($mailArray, $moddedUser);
+        }
+
+        Mail::to($mailArray)->send(new ProductCreated($product));
 
         return redirect('/products');;
     }
