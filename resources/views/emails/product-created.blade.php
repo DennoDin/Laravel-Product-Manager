@@ -1,15 +1,11 @@
 @component('mail::message')
-# Introduction
 
 ## A new product has been created!
 
+<!-- ### Details
 | Name    | SKU | Description |
 | ------- | --- | ----------- |
-|{{ $product->name }} | {{ $product->SKU }} | {{ $product->description }} |
-
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+|{{ $product->name }} | {{ $product->SKU }} | {{ $product->description }} | -->
 
 Thanks,<br>
 {{ config('app.name') }}

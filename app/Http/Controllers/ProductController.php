@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\ProductsRequest;
+use App\Mail\ProductCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -58,6 +60,8 @@ class ProductController extends Controller
             'description' => $request->description,
             'image' => $image,
         ]);
+
+        Mail::to('dustin.andy.tran@gmail.com')->send(new ProductCreated($product));
 
         return redirect('/products');;
     }

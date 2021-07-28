@@ -31,8 +31,6 @@ class ProductCreated extends Mailable
      */
     public function build(Product $product)
     {
-        dd($product);
-        // return $this->subject('New Product Created')->view('emails.product-created-html');
         return $this->subject('New Product Created')->markdown('emails.product-created', [
             "product" => $product,
         ]);
